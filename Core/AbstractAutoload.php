@@ -30,20 +30,20 @@ abstract class AbstractAutoload
 
     static function aonyxEssentialsAbstracts($class_name){
         $class_name = str_replace('Aonyx\\' . self::FOLDER_ABSTRACTS . '\\', '', $class_name);
-        if(file_exists('vendor/Aonyx/aonyx-core/' . self::FOLDER_ABSTRACTS . '/' . $class_name . '.php'))
-            require 'vendor/Aonyx/aonyx-core/' . self::FOLDER_ABSTRACTS . '/' . $class_name . '.php';
+        if(file_exists('vendor/aonyx-cms/' . self::FOLDER_ABSTRACTS . '/' . $class_name . '.php'))
+            require 'vendor/aonyx-cms/' . self::FOLDER_ABSTRACTS . '/' . $class_name . '.php';
     }
 
     static function aonyxEssentialsInterface($class_name){
         $class_name = str_replace('Aonyx\\' . self::FOLDER_INTERFACES . '\\', '', $class_name);
-        if(file_exists('vendor/Aonyx/aonyx-core/' . self::FOLDER_INTERFACES . '/' . $class_name . '.php'))
-            require 'vendor/Aonyx/aonyx-core/' . self::FOLDER_INTERFACES . '/' . $class_name . '.php';
+        if(file_exists('vendor/aonyx-cms/' . self::FOLDER_INTERFACES . '/' . $class_name . '.php'))
+            require 'vendor/aonyx-cms/' . self::FOLDER_INTERFACES . '/' . $class_name . '.php';
     }
 
     static function aonyxEssentialsClasses($class_name){
         $class_name = str_replace('Aonyx\\' . self::FOLDER_CLASSES . '\\', '', $class_name);
-        if(file_exists('vendor/Aonyx/aonyx-core/' . self::FOLDER_CLASSES . '/' . $class_name . '.php'))
-            require 'vendor/Aonyx/aonyx-core/' . self::FOLDER_CLASSES . '/' . $class_name . '.php';
+        if(file_exists('vendor/aonyx-cms/' . self::FOLDER_CLASSES . '/' . $class_name . '.php'))
+            require 'vendor/aonyx-cms/' . self::FOLDER_CLASSES . '/' . $class_name . '.php';
     }
 
     
