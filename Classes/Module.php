@@ -12,26 +12,26 @@ use Aonyx\Classes\Errors;
 class Module
 {
 
-    public function getAction(array $routes, $child, $action, $module) {
+    public function getAction(array $routes, $module) {
 
-        if(isset($child)) {
+        if(isset($_GET['child'])) {
 
-            if(!array_key_exists($child,$routes)) {
+            if(!array_key_exists($_GET['child'],$routes)) {
 
                 // Si l'action n'existe pas on bloque
                 Errors::noRouteAction();
             } else {
 
                 // Sinon on appelle le child demandée
-                $call = new $routes[$child]['namespace'];
+                $call = new $routes[$_GET['child']]['namespace'];
 
                 // Si une action existe
-                if (isset($action)) {
+                if (isset($_GET['action'])) {
 
-                    $call->{$routes[$child.'/'.$action]['action']}();
+                    $call->{$routes[$_GET['child'].'/'.$_GET['action']]['action']}();
                 } else {
 
-                    $call->{$routes[$child]['action']}();
+                    $call->{$routes[$_GET['child']]['action']}();
                 }
             }
 
