@@ -37,8 +37,8 @@ class Module
 
         } else {
 
-            $instance = '\Modules\\' . $module . '\Controllers\\' . $module . 'Controller()';
-            $call = new $instance;
+            $instance = '\Modules\\' . $module . '\Controllers\\' . $module . 'Controller';
+            $call = new $instance();
             $call->indexAction();
         }
     }
